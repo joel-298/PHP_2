@@ -1,0 +1,116 @@
+body {
+    background-color: #f8f9fa;
+    padding: 0px;
+    margin: 0px;
+    overflow-y: hidden;
+}
+
+.login-container {
+    padding: 0px;
+    margin: 0px;
+}
+
+.login-card {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .login-card {
+        overflow-y: auto;
+    }
+}
+
+.login-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    padding: 60px;
+    background: white;
+}
+
+@media screen and (min-width:768px) {
+    .login-form {
+        margin: auto;
+    }
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 8px;
+    padding-left: 15px;
+}
+
+.btn-primary {
+    border: none;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1c49feff, #0683ffff);
+}
+
+.forgot-password {
+    color: rgb(0, 119, 255);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.input-group-text {
+    background-color: transparent;
+    border-right: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    color: black
+}
+
+.input-group:focus-within .input-group-text {
+    color: rgb(0, 119, 255);
+}
+
+.input-group .form-control {
+    border-left: none;
+}
+
+#emailFeedback,
+#passwordFeedback {
+    font-size: 15px;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+/* LOADER CSS */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hides the default password reveal button in browsers like Edge */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}

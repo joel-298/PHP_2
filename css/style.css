@@ -1,0 +1,211 @@
+.nav-link:hover {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 342px) {
+    #img {
+        width: 60%;
+    }
+}
+
+.span {
+    color: red;
+    /* display: none; */
+}
+
+.display {
+    display: inline;
+}
+
+span {
+    color: rgb(0, 119, 255);
+    font-weight: 500;
+}
+
+span:hover {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#url {
+    margin-top: 15px;
+}
+
+.display_none {
+    display: none;
+}
+
+#signUpForm,
+#loginForm,
+#otpForm,
+#forgotForm,
+#RestPasswordForm {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px -60px grey;
+}
+
+#heading_forgot_password {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 0px;
+    margin-bottom: 30px;
+}
+
+/* VIDEO TAG CSS */
+.img-fluid {
+    width: auto;
+    height: 450px;
+}
+
+/* LOADER CSS */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+video {
+    /* background-color: black; */
+    height: fit-content;
+}
+
+@media screen and (max-width: 768px) {
+    .sample_email {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        /* background-color:black ;  */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .sample_email {
+        margin: 0px;
+        display: flex;
+        justify-content: start;
+        /* padding-left: 100px; */
+        /* background-color:black ;  */
+    }
+}
+
+.checkbox {
+    border: 2px solid rgb(198, 198, 198);
+}
+
+/* OTP Validation Styles */
+.otp-box {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.otp-box:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.otp-box.is-valid {
+    border-color: #28a745;
+    background-color: #f8fff9;
+}
+
+.otp-box.is-invalid {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.otp-box.is-valid:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.otp-box.is-invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Disable submit button styles */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Timer text styling */
+#timerText {
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#first_div {
+    overflow-y: auto;            /* Enable vertical scrolling when needed */
+    overflow-x: hidden;          /* Prevent horizontal scroll */
+    word-wrap: break-word;
+    padding: 1rem;
+}
+
+#name_display,
+#email_display {
+        white-space: normal;
+        word-break: break-word;
+        overflow: visible;
+        display: block;
+        text-align: center;
+}
+
+
+/* Hides the default password reveal button in browsers like Edge */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+
+/* Book appointment page */
+.book_appointment {
+    box-shadow:0px 0px 40px -30px black;
+    border-radius:10px;
+}
+.form-label.required::after {
+    content: " *";
+    color: red;
+}
+.slot-available {
+    color: green;
+    font-weight: bold;
+}
+.slot-unavailable {
+    color: red;
+    font-weight: bold;
+}
+.time-slot-box {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin: 3px;
+    cursor: pointer;
+}
+.time-slot-box.unavailable {
+    background-color: #f8d7da;
+    color: #842029;
+    cursor: not-allowed;
+}
+.time-slot-box.available {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}

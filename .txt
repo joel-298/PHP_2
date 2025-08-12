@@ -1,0 +1,66 @@
+
+
+<!-- 
+-- 2) booking_info: stores appointment entries
+DROP TABLE IF EXISTS `booking_info`;
+CREATE TABLE `booking_info` (
+  `booking_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `person_name` VARCHAR(255) NOT NULL,
+  `email_address` VARCHAR(255) NOT NULL,
+  `booking_start_datetime` DATETIME NOT NULL,
+  `booking_end_datetime` DATETIME NOT NULL,
+  `created_on` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`booking_id`),
+  -- lookup index to quickly find overlaps / range queries
+  INDEX `idx_booking_start` (`booking_start_datetime`),
+  INDEX `idx_booking_end` (`booking_end_datetime`),
+  INDEX `idx_start_end` (`booking_start_datetime`, `booking_end_datetime`),
+  -- optionally enforce email format length
+  INDEX `idx_email` (`email_address`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- 3) holiday_info: holds individual holiday dates
+DROP TABLE IF EXISTS `holiday_info`;
+CREATE TABLE `holiday_info` (
+  `holiday_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `holiday_date` DATE NOT NULL,
+  `holiday_reason` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`holiday_id`),
+  UNIQUE KEY `uk_holiday_date` (`holiday_date`),
+  INDEX `idx_holiday_date` (`holiday_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+- 4) booking_documents_info: uploaded files per booking
+DROP TABLE IF EXISTS `booking_documents_info`;
+CREATE TABLE `booking_documents_info` (
+  `document_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `booking_id` INT UNSIGNED NOT NULL,
+  `document_path` VARCHAR(1024) NOT NULL,
+  `uploaded_on` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`document_id`),
+  INDEX `idx_booking_id` (`booking_id`),
+  CONSTRAINT `fk_documents_booking`
+    FOREIGN KEY (`booking_id`) REFERENCES `booking_info` (`booking_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci; -->
+
+
+
+
+
+<!-- 
+INSERT INTO `holiday_info` (`holiday_date`, `holiday_reason`) VALUES
+  ('2025-01-01', 'New Year''s Day'),
+  ('2025-01-26', 'Republic Day'),         -- example (India) - replace if needed
+  ('2025-03-29', 'Good Friday'),          -- example
+  ('2025-08-15', 'Independence Day'),     -- example
+  ('2025-10-02', 'Gandhi Jayanti');       -- example
+
+INSERT IGNORE INTO `holiday_info` (`holiday_date`, `holiday_reason`) VALUES
+  ('2025-02-01', 'Weekend - Saturday'),
+  ('2025-02-02', 'Weekend - Sunday'),
+  ('2025-02-08', 'Weekend - Saturday'),
+  ('2025-02-09', 'Weekend - Sunday'),
+  ('2025-02-15', 'Weekend - Saturday'),
+  ('2025-02-16', 'Weekend - Sunday'); -->
